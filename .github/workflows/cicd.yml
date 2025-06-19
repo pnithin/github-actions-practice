@@ -21,11 +21,8 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
-<<<<<<< HEAD
-=======
     - name: Run Unit Tests
       run: mvn test
 
     - name: Simulate Deployment
       run: echo "Deploying to staging server..."
->>>>>>> bbbd8bdc29c4ae0fd1b0576995e9ce406e8c02f1
