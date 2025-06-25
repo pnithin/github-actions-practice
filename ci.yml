@@ -23,11 +23,11 @@ jobs:
           python-version: '3.11'
 
       - name: install dependices
-          run: |
-            python -m venv venv
-            source venv/bin/activate
-            pip install --upgrade pip
-            pip install -r requirements.txt 
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt 
 
       - name: run test with pytest
         run: |
