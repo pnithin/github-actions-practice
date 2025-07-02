@@ -1,0 +1,35 @@
+name: Import API to AZURE APIM
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "petstore.yaml"
+
+
+jobs:
+  import-api:
+    name: Import API
+    runs-on: ubuntu-latest
+
+
+    steps: 
+    - name: checkout
+      uses: actions/checkout@v4
+
+
+    - name: Azure login
+      uses: azure/login@v2.3.0
+      with:
+        creds: ${{ secrect.AZURE_CREDENTIALS }}
+   
+    - name: import api
+      run: |
+        az apim api import \
+          --resource-group ${{ secrets.AZURE_RG }} \
+          --service-name ${{ secrets.APIM_NAME }} \
+          --path "petstore" \
+          --api-id "petstore-api" \
+          --specification-format OpenApi \
+          --specification-path petstore.yaml
