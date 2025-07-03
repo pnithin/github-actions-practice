@@ -1,4 +1,4 @@
-name: Import API to AZURE APIM
+name: Import API to AZURE ApiM
 
 on:
   push:
