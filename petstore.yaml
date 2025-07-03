@@ -8,5 +8,5 @@ paths:
       summary: Get all pets
       responses:
         '200':
-          description: A list of pets
+          description: A list of petss
 
